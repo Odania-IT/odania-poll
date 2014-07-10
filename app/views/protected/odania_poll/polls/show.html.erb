@@ -1,17 +1,25 @@
-<p>
-	<strong>User:</strong>
-	<%= @poll.user %>
-</p>
-
-<p>
+<h1>
 	<strong>Question:</strong>
 	<%= @poll.question %>
-</p>
+</h1>
 
 <p>
 	<strong>Due date:</strong>
 	<%= @poll.due_date %>
 </p>
 
+<p>
+	Answers:
+	<% @poll.answers.each do |answer| %>
+		<p>
+			<% if @user_vote.nil? %>
+				<%= answer.answer %>: <%= link_to t('Vote'), vote_protected_odania_poll_poll_path(@poll, answer_id: answer.id) %>
+			<% else %>
+				<%= answer.answer %>: <%= answer.votes.count %>
+			<% end %>
+		</p>
+	<% end %>
+</p>
+
 <%= link_to 'Edit', edit_protected_odania_poll_poll_path(@poll) %> |
-<%= link_to 'Back', protected_odania_poll_poll_path %>
+<%= link_to 'Back', protected_odania_poll_polls_path %>

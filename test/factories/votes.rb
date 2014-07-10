@@ -3,7 +3,6 @@
 FactoryGirl.define do
 	factory :poll_vote, :class => 'OdaniaPortal::Votes' do
 		user
-		token
 		answer
 	end
 end
