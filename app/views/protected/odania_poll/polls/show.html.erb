@@ -1,0 +1,17 @@
+<p>
+	<strong>User:</strong>
+	<%= @poll.user %>
+</p>
+
+<p>
+	<strong>Question:</strong>
+	<%= @poll.question %>
+</p>
+
+<p>
+	<strong>Due date:</strong>
+	<%= @poll.due_date %>
+</p>
+
+<%= link_to 'Edit', edit_protected_odania_poll_poll_path(@poll) %> |
+<%= link_to 'Back', protected_odania_poll_poll_path %>
