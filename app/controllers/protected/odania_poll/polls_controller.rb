@@ -67,7 +67,7 @@ class Protected::OdaniaPoll::PollsController < ProtectedController
 
 	def set_public_poll
 		@poll = OdaniaPoll::Poll.where(id: params[:id]).first
-		return redirect_to protected_odania_poll_poll_path if @poll.nil?
+		return redirect_to protected_odania_poll_polls_path if @poll.nil?
 
 		@user_vote = @poll.votes.where(user_id: current_user.id).first
 	end
