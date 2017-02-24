@@ -22,9 +22,9 @@ group :development, :test do
 	gem 'minitest'
 	gem 'minitest-reporters'
 	gem 'database_cleaner'
-	gem 'odania_core', git: 'https://github.com/Odania-IT/odania-core.git'
+	gem 'odania_core', git: 'https://github.com/Odania-IT/odania-core.git', branch: 'develop'
 
-	gem 'libv8', '~> 3.11.8.12', :platforms => :ruby
+	gem 'libv8', :platforms => :ruby
 	gem 'therubyracer', '>= 0.11.4', :platforms => :ruby, :require => 'v8'
 	gem 'therubyrhino', '>= 0.11.4', :platforms => :jruby
 
